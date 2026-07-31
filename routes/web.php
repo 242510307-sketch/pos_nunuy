@@ -7,7 +7,7 @@ use App\Http\Controllers\ItemPenjualanController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
-use GuzzleHttp\Promise\Create;
+
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'index'])->name('login');
