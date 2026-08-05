@@ -21,10 +21,15 @@ class ProdukFactory extends Factory
         $hargaBeli = $this->faker->numberBetween(10_000, 500_000);
         return [
             'user_id' => User::where('role_id',1)->inRandomOrder()->value('id'),
-            'foto' =>'produk' . $this->faker->uuid . 'jpg',
+            'foto' =>'produk' . $this->faker->uuid . '.jpg',
             'nama' => $this->faker->words(3, true),
+            'jenis'=> $this->faker->randomElement([
+                'Makanan',
+                'Minuman',
+                'Snack',
+            ]),
             'harga_beli' => $hargaBeli,
-            'harga_jual' => $hargaBeli + $this->faker->numberBetween(5_000, 100_0000),
+            'harga_jual' => $hargaBeli + $this->faker->numberBetween(5_000, 100_000),
             'stok' => $this->faker->numberBetween(1, 500)
         ];
     }

@@ -116,6 +116,7 @@
                             <option value="">Pilih Pembayaran</option>
                             <option value="CASH">Cash</option>
                             <option value="QRIS">QRIS</option>
+                            <option value="TRANSFER">Transfer</option>
                         </select>
 
                         <button class="btn btn-success w-100 {{ $sale->status === 'COMPLETED' ? 'disabled' : '' }}">
