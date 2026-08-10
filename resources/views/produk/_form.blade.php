@@ -40,26 +40,7 @@
     @enderror
 </div>
 
-<!-- TAMBAHKAN KODE INI -->
-<div class="mt-3">
-    <label>Jenis</label><br>
-    <select name="jenis" class="form-control @error('jenis') is-invalid @enderror">
-        <option value="">-- Pilih Jenis --</option>
-        <option value="Makanan" {{ old('jenis', isset($produk) ? $produk->jenis : '') == 'Makanan' ? 'selected' : '' }}>Makanan</option>
-        <option value="Minuman" {{ old('jenis', isset($produk) ? $produk->jenis : '') == 'Minuman' ? 'selected' : '' }}>Minuman</option>
-        <option value="Snack" {{ old('jenis', isset($produk) ? $produk->jenis : '') == 'Snack' ? 'selected' : '' }}>Snack</option>
-        <option value="Lainnya" {{ old('jenis', isset($produk) ? $produk->jenis : '') == 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
-    </select>
-
-    @error('jenis')
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
-    @enderror
-</div>
-<!-- SAMPAI SINI -->
-
-<div class="mt-3">
+<div>
     <label>Harga Beli</label><br>
     <input type="number" name="purchase_price" class="form-control @error('purchase_price') is-invalid @enderror"
         value="{{ old('purchase_price', $produk->harga_beli ?? '') }}">
