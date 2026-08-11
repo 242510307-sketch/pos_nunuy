@@ -86,6 +86,7 @@
                                 <th scope="col" class="text-center" style="width: 50px;">#</th>
                                 <th scope="col" class="text-center" style="width: 80px;">Foto</th>
                                 <th scope="col">Nama Produk</th>
+                                <th scope="col">Jenis</th>
                                 <th scope="col">Penanggung Jawab</th>
                                 <th scope="col">Harga Beli</th>
                                 <th scope="col">Harga Jual</th>
