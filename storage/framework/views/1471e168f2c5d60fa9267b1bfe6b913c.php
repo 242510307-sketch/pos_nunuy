@@ -1,27 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <!-- Isi title yang kita kirimkan dari views lain-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title><?php echo $__env->yieldContent('title'); ?></title>
-    <!-- memanggil Link bootstraps--> 
-     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
 </head>
+
 <body>
 
-<div class="container">
+    
+    <?php echo $__env->make('layouts.navbar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
-    <?php if(session('success')): ?>
-        <div class="alert alert-success">
-            <?php echo e(session('success')); ?>
+    
+    <div class="container mt-4">
 
-        </div>
-    <?php endif; ?>
+        
+        <?php if(session('success')): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                <?php echo e(session('success')); ?>
 
-    <!-- Isi konten yang kita kirimkan dari views lain-->
-     <?php echo $__env->yieldContent('content'); ?>
 
-</div>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close">
+                </button>
+            </div>
+        <?php endif; ?>
+
+        
+        <?php if(session('error')): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <?php echo e(session('error')); ?>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close">
+                </button>
+            </div>
+        <?php endif; ?>
+
+        
+        <?php echo $__env->yieldContent('content'); ?>
+
+    </div>
+
+    
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 </html><?php /**PATH C:\laragon\www\pos_nunuy\resources\views/layouts/app.blade.php ENDPATH**/ ?>
